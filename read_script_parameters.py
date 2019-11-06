@@ -2,6 +2,9 @@
 import sys
 import pickle
 
+# to run
+# python read_script_parameters.py some_data.pkl
+
 print('arguments', len(sys.argv), str(sys.argv))
 
 def hello(name):
@@ -10,17 +13,17 @@ def hello(name):
 filename = sys.argv[1]
 
 with open(filename, 'rb') as readfile:
-    files = pickle.load(readfile)
+    something = pickle.load(readfile)
 
-hello(files)
-
-something = {
-    'test': 1,
-    'a': True,
-    'name': 'greg'
-}
+hello(something['name'])
 
 # creating a pickle file
+# something = {
+#     'test': 1,
+#     'a': True,
+#     'name': 'greg'
+# }
+
 # with open('some_data.pkl', 'wb') as writefile:
 #     pickle.dump(something, writefile)
 

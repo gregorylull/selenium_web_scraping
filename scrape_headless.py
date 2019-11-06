@@ -28,4 +28,6 @@ time.sleep(1)
 
 # screenshot of viewport, which in this case is 1200 x 3000 pixels
 driver.save_screenshot(f'screenshot-headless-{url_env}.png')
+driver.close()
+print('finished running')
 
