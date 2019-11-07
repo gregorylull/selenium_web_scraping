@@ -1,3 +1,5 @@
+# to run:
+# python scrape_headless_from_files.py url1
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -19,15 +21,17 @@ chrome_options = Options()
 chrome_options.add_argument("--disable-extensions")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--headless")
-chrome_options.add_argument("--window-size=1200,3000")
+
+# this is just setting the default viewport size, width=1200, height=1200. 
+chrome_options.add_argument("--window-size=1200,1200") 
 
 driver = webdriver.Chrome(options=chrome_options)
 
 driver.get(url)
 time.sleep(1)
 
-# screenshot of viewport, which in this case is 1200 x 3000 pixels
+# screenshot of viewport, which in this case is 1200 x 1200 pixels
 driver.save_screenshot(f'screenshot-headless-{url_env}.png')
 driver.close()
-print('finished running')
 
+print(f'\nFinished {str(sys.argv)}')

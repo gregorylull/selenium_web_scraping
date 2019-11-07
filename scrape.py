@@ -4,6 +4,8 @@ import time
 import sys
 import chromedriver_binary
 
+print('arguments', len(sys.argv), str(sys.argv))
+
 urls = {
     'url1': 'https://www.imdb.com/search/keyword/?keywords=action-hero&ref_=fn_al_kw_1',
     'url2': 'https://www.imdb.com/search/keyword/?keywords=action-hero&ref_=kw_nxt&sort=moviemeter,asc&mode=detail&page=2'
@@ -20,4 +22,7 @@ time.sleep(1)
 # screenshot of viewport, which in this case is 1200 x 3000 pixels
 driver.save_screenshot(f'screenshot-{url_env}.png')
 driver.close()
+
+# This is just print the script name and arguments passed
+print(f'\nFinished {str(sys.argv)}')
 
