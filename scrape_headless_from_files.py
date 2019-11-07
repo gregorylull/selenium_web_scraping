@@ -19,7 +19,7 @@ import sys
 import chromedriver_binary
 import pandas as pd
 
-filename = int(sys.argv[1])
+filename = sys.argv[1]
 index_start = int(sys.argv[2])
 index_stop = int(sys.argv[3])
 
